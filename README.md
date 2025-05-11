@@ -1,35 +1,50 @@
-# Greenhouse Gas Emissions Analysis Project
+# Walmart Sales Prediction
 
 ![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## 📊 Project Overview
 
-This project provides a comprehensive analysis and visualization toolkit for greenhouse gas emissions data across different countries from 1990 to 2020. It offers powerful data processing capabilities and multiple visualization options to help understand global emission patterns and trends.
+This machine learning project focuses on predicting weekly sales for Walmart stores using historical sales data and various external factors. The project implements multiple regression models to forecast sales and help optimize inventory management and business planning.
 
 ## 🎯 Key Features
 
-### Data Processing
-- Automated data cleaning and preprocessing pipeline
-- Intelligent handling of missing values and data type conversions
-- Efficient calculation of total emissions across multiple years
-- Smart identification of top emitting countries
+### Data Analysis & Preprocessing
+- Comprehensive exploratory data analysis
+- Advanced feature engineering
+- Data cleaning and preprocessing pipeline
+- Handling of missing values and outliers
 
-### Visualization Capabilities
-- **Pie Charts**: Distribution analysis of emissions among top countries
-- **Line Charts**: Temporal trend analysis from 1990 to 2020
-- **Bar Charts**: Comparative analysis of emissions across countries
+### Machine Learning Models
+- Linear Regression
+- Ridge Regression
+- K-Nearest Neighbors (KNN)
+- Random Forest
+- Decision Trees
+- XGBoost
+
+### Visualization & Analysis
+- Interactive data visualizations using Plotly
+- Statistical analysis with Seaborn
+- Performance metrics visualization
+- Model comparison charts
 
 ## 🛠️ Technical Requirements
 
 ### System Requirements
-- Python 3.x or higher
-- 4GB RAM minimum (8GB recommended)
-- 500MB free disk space
+- Python 3.x
+- 8GB RAM minimum (16GB recommended)
+- 1GB free disk space
 
 ### Python Dependencies
 ```python
+numpy>=1.20.0
 pandas>=1.3.0
+scikit-learn>=0.24.0
+xgboost>=1.5.0
+category_encoders>=2.6.0
+plotly>=5.3.0
+seaborn>=0.11.0
 matplotlib>=3.4.0
 ```
 
@@ -37,11 +52,11 @@ matplotlib>=3.4.0
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/greenhouse-emissions-analysis.git
-   cd greenhouse-emissions-analysis
+   git clone https://github.com/yourusername/walmart-sales-prediction.git
+   cd walmart-sales-prediction
    ```
 
-2. **Set Up Virtual Environment** (Recommended)
+2. **Set Up Virtual Environment**
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -54,77 +69,32 @@ matplotlib>=3.4.0
 
 ## 📖 Usage Guide
 
-### Data Processing Functions
+1. Open the Jupyter notebook `Walmart_sales_prediction.ipynb`
+2. Run the cells sequentially to:
+   - Load and preprocess the data
+   - Perform exploratory data analysis
+   - Train and evaluate models
+   - Generate predictions
 
-#### 1. Reading Data
-```python
-from Assignment1 import read_csv
-data = read_csv('path_to_your_data.csv')
-```
+## 📊 Dataset Features
 
-#### 2. Data Cleaning
-```python
-cleaned_data = clean_data(
-    source_data=data,
-    data_cols=["1990", "2000", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"],
-    drop_col='Series Name'
-)
-```
+The dataset includes the following features:
+- Store: Store identifier
+- Date: Week of sales
+- Weekly_Sales: Sales for the given store
+- Holiday_Flag: Whether the week is a special holiday week
+- Temperature: Average temperature in the region
+- Fuel_Price: Cost of fuel in the region
+- CPI: Consumer Price Index
+- Unemployment: Unemployment rate
 
-#### 3. Total Emissions Calculation
-```python
-total_emissions = total_emission_data(cleaned_data, columns_to_clean)
-```
+## 📈 Model Performance
 
-### Visualization Functions
-
-#### 1. Pie Chart
-```python
-pie_chart(
-    plot_data=top_emission_df,
-    data_point_col='total_emissions',
-    item_col='Country Name',
-    title="Countries with Highest Greenhouse Gas Emissions (1990-2020)"
-)
-```
-
-#### 2. Line Chart
-```python
-line_chart(
-    plot_data=line_plot_data,
-    x_label='Year',
-    y_label='Million Metric tons of CO2 Equivalent',
-    title='Global Greenhouse Emission Trends (1990-2020)'
-)
-```
-
-#### 3. Bar Chart
-```python
-bar_chart(
-    dataframe=top_emission_df,
-    item='Country Name',
-    data_col='2000',
-    x_label='Countries',
-    y_label='Million Metric tons of CO2 Equivalent',
-    title='Greenhouse Emissions by Country (2000)'
-)
-```
-
-## 📊 Data Structure
-
-The project works with CSV data containing the following columns:
-- Country Name
-- Series Name
-- Year columns (1990-2020)
-- Calculated total emissions
-
-## 📈 Output Examples
-
-The script generates three types of visualizations:
-
-1. **Pie Chart**: Shows the proportional distribution of emissions among top emitting countries
-2. **Line Chart**: Displays the emission trends over time (1990-2020)
-3. **Bar Chart**: Compares emissions of top countries for a specific year (2000)
+Models are evaluated using:
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- R-squared Score
+- Cross-validation scores
 
 ## 🤝 Contributing
 
@@ -136,40 +106,36 @@ We welcome contributions! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Contribution Guidelines
-- Follow PEP 8 style guide
-- Add comments for complex logic
-- Update documentation for new features
-- Write unit tests for new functionality
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## 👥 Author
 
-- **Vijay M** - *Initial work* - [Your GitHub Profile]
-
-## 🙏 Acknowledgments
-
-- World Bank for providing the greenhouse gas emissions data
-- Python community for the excellent data science libraries
-- Contributors and maintainers of pandas and matplotlib
+- **Praharsh Vijay Medi** - *Implementation* - [GitHub Profile](https://github.com/dimpupraharsh)
 
 ## 📞 Support
 
-For support, please:
-1. Check the [Issues](https://github.com/yourusername/greenhouse-emissions-analysis/issues) section
+For questions or issues:
+1. Check the [Issues](https://github.com/dimpupraharsh/walmart-sales-prediction/issues) section
 2. Create a new issue if your problem isn't already listed
-3. Contact the maintainers at [your-email@domain.com]
+3. Contact: praharsh789@gmail.com
 
-## 🔄 Future Enhancements
+## 🔄 Future Improvements
 
-- [ ] Add support for more data formats
-- [ ] Implement interactive visualizations
-- [ ] Add machine learning capabilities for emission prediction
-- [ ] Create a web interface for easier data visualization
-- [ ] Add support for real-time data updates
+- [ ] Add more advanced feature engineering techniques
+- [ ] Implement deep learning models
+- [ ] Add automated hyperparameter optimization
+- [ ] Create a web interface for predictions
+- [ ] Add support for real-time predictions
+- [ ] Implement model explainability tools
+
+## 📚 Resources
+
+- Scikit-learn Documentation
+- XGBoost Documentation
+- Pandas Documentation
+- Plotly Documentation
 
 ---
 
